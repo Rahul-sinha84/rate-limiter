@@ -1,0 +1,40 @@
+{
+  "name": "rate-limiter",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:Rahul-sinha84/rate-limiter.git",
+  "author": "Rahul-sinha84 <rahulchampion48@gmail.com>",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch --env-file=.env src/index.ts",
+    "build": "tsc",
+    "start": "node --env-file=.env dist/index.js",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@types/redis": "^4.0.11",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "redis": "^6.0.1",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.0.1",
+    "@types/supertest": "^7.2.0",
+    "eslint": "^10.6.0",
+    "prettier": "^3.9.1",
+    "supertest": "^7.2.2",
+    "tsx": "^4.22.4",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.62.0",
+    "vitest": "^4.1.9"
+  }
+}
