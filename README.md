@@ -50,7 +50,7 @@ This one *needs* the Lua script, unlike the other two: the decision ("is this ca
 The sliding window log's correctness under concurrency isn't just asserted — it's tested. `test.routes.ts` exposes the sliding window limiter behind a low `max` for exactly this purpose: firing many concurrent requests at it (see the load-test script used during development) and confirming the number of *allowed* responses never exceeds the configured limit, and that the underlying Redis sorted set (`ZCARD`) never holds more entries than `max` at once, even under deliberate concurrent bursts.
 
 ## Project Structure
-\`\`\`
+```
 src/
 ├── app.ts                        # Express app setup and middleware registration
 ├── index.ts                      # Server entry point
@@ -81,14 +81,14 @@ src/
 │   └── express.d.ts
 │
 └── utils/                        # Shared utility classes and helpers
-\`\`\`
+```
 
 ## Setup
 
-\`\`\`bash
+```bash
 npm install
 cp .env.example .env
 npm run dev
-\`\`\`
+```
 
-Requires a running Redis instance — local (\`redis://localhost:6379\`) or managed (\`rediss://...\`).
+Requires a running Redis instance — local (`redis://localhost:6379`) or managed (`rediss://...`).
